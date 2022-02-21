@@ -1,4 +1,5 @@
 class PetsController < ApplicationController
+  before_action :set_pet, only: [:show, :destroy]
   def index
     @pets = Pet.all
   end
@@ -22,9 +23,15 @@ class PetsController < ApplicationController
   end
 
   def destroy
+    @pet.destroy
+    redirect_to users_path
   end
 
   private
+
+  def set_pet
+    @pet = Pet.find(params[:id])
+  end
 
   def pet_params
     params.require(:pet).permit(:name, :age, :type, :breed)
