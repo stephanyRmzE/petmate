@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-12">
+      <%= link_to "Add Pet", new_pet_path(@list), class:"btn btn-flat", style:"float:right; margin-top:20px" %>
+
+        <div class="container">
+          <h1><%= @pet.name %></h1>
+          <p><%= @pet.age %></p>
+        </div>
+    </div>
+  </div>
+</div>

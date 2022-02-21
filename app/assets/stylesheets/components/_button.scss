@@ -1,0 +1,33 @@
+
+.btn-flat {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #1EDD88;
+  transition: background 0.3s ease;
+  text-decoration: none;
+}
+
+.btn-flat:hover {
+  background: #1BCB7F;
+  color: white;
+}
+
+.btn-pink {
+  margin-top: 20px;
+  color: #f3f3f3;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #DEA957;
+  transition: background 0.3s ease;
+  text-decoration: none;
+  text-align: center;
+  width: 100%;
+  opacity: .8;
+}
+
+.btn-pink:hover {
+  background: #DEA957;
+  color: white;
+  opacity: 1;
+}
