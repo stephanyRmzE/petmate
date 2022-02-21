@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-10">
+      <div>
+        <% @pets.each do |pet| %>
+          <div >
+            <a  href="<%= pet_path(pet)%>">
+            <div>
+              <h2><%= pet.name %></h2>
+            </div>
+            </a>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
