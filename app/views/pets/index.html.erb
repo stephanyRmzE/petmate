@@ -1,13 +1,16 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-10">
-      <div>
+      <div class = "cards">
         <% @pets.each do |pet| %>
-          <div >
+          <div class = "card" >
             <a  href="<%= pet_path(pet)%>">
-            <div>
-              <h2><%= pet.name %></h2>
-            </div>
+              <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+                                    url(<%= cl_image_path(pet.photo.key)%>)">
+              </div>
+              <div class = "card-description">
+                <h2><%= pet.name %></h2>
+              </div>
             </a>
           </div>
         <% end %>
