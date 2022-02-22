@@ -1,4 +1,9 @@
 class UsersController < ApplicationController
+  def create
+    super
+    resource.photo = "/assets/images/cat-icon.png"
+  end
+
   def show
     @user = User.find(params[:id])
   end
