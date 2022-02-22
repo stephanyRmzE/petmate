@@ -38,6 +38,7 @@ class PetsController < ApplicationController
 
   def destroy
     @pet.destroy
+    authorize @pet
     redirect_to user_path
   end
 
