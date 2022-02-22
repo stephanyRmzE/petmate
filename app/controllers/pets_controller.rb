@@ -26,6 +26,7 @@ class PetsController < ApplicationController
 
   def edit
     @pet = Pet.find(params[:id])
+    authorize @pet
   end
 
   def update
@@ -42,7 +43,6 @@ class PetsController < ApplicationController
 
   def set_pet
     @pet = Pet.find(params[:id])
-    authorize @pet
   end
 
   def pet_params
