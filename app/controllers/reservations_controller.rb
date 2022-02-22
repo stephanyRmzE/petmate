@@ -1,17 +1,22 @@
 class ReservationsController < ApplicationController
-  before_action :set_reservation, only: [:show, :destroy]
+  before_action :set_reservation, only: [:show, :destroy, :update]
   def index
     @reservation = Reservation.all
   end
 
   def new
+    @pet = Pet.find(params[:pet_id])
     @reservation = Reservation.new
+    authorize @reservation
   end
 
   def create
-    @reservation = Reservation.new(reservation_params)
+    @pet = Pet.find(params[:pet_id])
     @user = current_user
+    @reservation = Reservation.new(reservation_params)
     @reservation.user = @user
+    @reservation.pet = @pet
+    authorize @reservation
     if @reservation.save
       redirect_to reservations_path(@user)
     else
@@ -30,7 +35,7 @@ class ReservationsController < ApplicationController
   private
 
   def set_reservation
-    @reservation = Reservation.find(params[:id])
+    @reservation = authorize Reservation.find(params[:id])
   end
 
   def reservation_params
