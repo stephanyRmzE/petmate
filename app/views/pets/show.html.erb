@@ -1,11 +1,15 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-12">
-      <%= link_to "Add Pet", new_pet_path(@list), class:"btn btn-flat", style:"float:right; margin-top:20px" %>
+      <%= link_to "Add Pet", new_pet_path(@pet), class:"btn btn-flat", style:"float:right; margin-top:20px" %>
 
         <div class="container">
-          <h1><%= @pet.name %></h1>
-          <p><%= @pet.age %></p>
+          <h2><%= @pet.name %></h2>
+          <p>Is a <%= @pet.breed %> <%= @pet.species %> <%= @pet.age %> years old </p>
+          <div>
+          <%= raise %>
+          <%= cl_image_tag @pet.photo.key, height: 300, width: 400, crop: :fill %>
+          </div>
         </div>
     </div>
   </div>
