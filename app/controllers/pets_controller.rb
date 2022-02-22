@@ -15,13 +15,15 @@ class PetsController < ApplicationController
     @pet.user_id = @user
     authorize @pet
     if @pet.save
-      redirect_to pets_path(@user)
+      redirect_to pet_path(@pet)
     else
       render :new
     end
   end
 
   def show
+    @pet = Pet.find(params[:id])
+    authorize @pet
   end
 
   def edit
