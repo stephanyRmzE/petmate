@@ -1,0 +1,28 @@
+<div class="row justify-content-md-center">
+  <div class="col col-md-6 col-lg-6">
+    <div class = "card" >
+              <div>
+                <h2><%= @pet.name %></h2>
+              </div>
+              <% if @pet.photo.attached? %>
+                <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @pet.photo.key %>')">
+              <% else %>
+                <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('')">
+              <% end %>
+              </div>
+          </div>
+      <div class="container-form-ext">
+        <div class="row justify-content-md-center">
+          <div class="col col-md-8 col-lg-10">
+            <div class="container-form-int">
+              <%= simple_form_for [@pet, @reservation] do |f| %>
+                <%= f.input :start_date %>
+                <%= f.input :end_date %>
+                <%= f.submit %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
