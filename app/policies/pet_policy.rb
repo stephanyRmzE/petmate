@@ -2,6 +2,7 @@ class PetPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       scope.all
+      # scope.where(user: user)
     end
     # NOTE: Be explicit about which records you allow access to!
     # def resolve

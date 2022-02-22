@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
   end
 
   private
-  
+
   def skip_pundit?
     devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)/
   end
