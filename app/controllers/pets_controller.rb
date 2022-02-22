@@ -1,7 +1,7 @@
 class PetsController < ApplicationController
   before_action :set_pet, only: [:show, :update, :destroy]
   def index
-    @pets = Pet.all
+    @pets = policy_scope(Pet)
   end
 
   def new
@@ -26,6 +26,7 @@ class PetsController < ApplicationController
 
   def edit
     @pet = Pet.find(params[:id])
+    authorize @pet
   end
 
   def update
@@ -35,7 +36,7 @@ class PetsController < ApplicationController
 
   def destroy
     @pet.destroy
-    redirect_to users_path
+    redirect_to user_path
   end
 
   private
