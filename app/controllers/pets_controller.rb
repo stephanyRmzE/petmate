@@ -21,11 +21,6 @@ class PetsController < ApplicationController
     end
   end
 
-  def show
-    @pet = Pet.find(params[:id])
-    authorize @pet
-  end
-
   def edit
     @pet = Pet.find(params[:id])
     authorize @pet
@@ -37,15 +32,15 @@ class PetsController < ApplicationController
   end
 
   def destroy
+    @user = @pet.user
     @pet.destroy
-    authorize @pet
-    redirect_to user_path
+    redirect_to user_path(@user)
   end
 
   private
 
   def set_pet
-    @pet = Pet.find(params[:id])
+    @pet = authorize Pet.find(params[:id])
   end
 
   def pet_params
