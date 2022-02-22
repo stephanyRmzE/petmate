@@ -8,6 +8,13 @@
             <div class = "card-description">
               <h2><%= @pet.name %></h2>
               <p>Is a <%= @pet.breed.downcase %> <%= @pet.species.downcase %> <%= @pet.age %> years old </p>
+              <% if @pet.user == current_user %>
+                <div class = "card-edit">
+                  <%= link_to 'Edit', edit_pet_path(@pet) %>
+                  <%= link_to 'Update', @pet %>
+                  <%= link_to 'Destroy', @pet, method: :delete, data: { confirm: 'Are you sure?' } %>
+                </div>
+              <% end %>
             </div>
           </div>
         </div>
