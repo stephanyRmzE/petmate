@@ -1,0 +1,92 @@
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: space-around;
+  margin-top: 8px;
+  column-gap: 30px;
+  row-gap: 20px;
+}
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.card{
+  margin-top: 20px;
+  width: 100%;
+  height: 330px;
+  text-align: center;
+  background-color: #FE9B3DE6;
+  border-radius: 1%;
+  box-shadow: 5px;
+
+  .card-image{
+    margin-top: 4%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 80%;
+  }
+}
+
+.card-remove-link{
+  position: absolute;
+  right: 7%;
+  color: white;
+  font-size: 20px;
+}
+
+.card-description{
+  text-decoration: none;
+  justify-content: center;
+}
+
+.card-description h2 {
+  font-size: 16px;
+  font-weight: bold;
+  color: rgb(117, 117, 117);
+  padding: 0 10px;
+}
+
+.card-description p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  padding: 0 10px;
+}
+
+.card-link{
+  text-decoration: none;
+  color: rgb(90, 89, 89);
+}

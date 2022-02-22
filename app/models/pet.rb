@@ -1,5 +1,5 @@
 class Pet < ApplicationRecord
-  CATEGORY = %w[Dogs Cats Birds Reptiles Rodents]
+  CATEGORY = %w[Dog Cat Bird Reptil Rodent]
   has_many :reservations
   has_one_attached :photo
 end
