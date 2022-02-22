@@ -7,7 +7,6 @@
           <h2><%= @pet.name %></h2>
           <p>Is a <%= @pet.breed %> <%= @pet.species %> <%= @pet.age %> years old </p>
           <div>
-          <%= raise %>
           <%= cl_image_tag @pet.photo.key, height: 300, width: 400, crop: :fill %>
           </div>
         </div>
