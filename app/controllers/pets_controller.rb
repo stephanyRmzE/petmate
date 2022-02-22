@@ -1,5 +1,6 @@
 class PetsController < ApplicationController
-  before_action :set_pet, only: [:show, :destroy]
+  before_action :set_pet, only: [:show, :update, :destroy]
+  # authorize @pet
   def index
     @pets = Pet.all
   end
@@ -20,6 +21,15 @@ class PetsController < ApplicationController
   end
 
   def show
+  end
+
+  def edit
+    @pet = Pet.find(params[:id])
+  end
+
+  def update
+    @pet.update(pet_params)
+    redirect_to pet_path(@pet)
   end
 
   def destroy
