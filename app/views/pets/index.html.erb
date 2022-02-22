@@ -18,7 +18,7 @@
               <% end %>
             </div>
               <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-                                    url(<%= cl_image_path(pet.photo.key)%>)">
+                                    url('<%= cl_image_path pet.photo.key %>')">
               </div>
               <div class = "card-description">
                 <h2><%= pet.name %></h2>
