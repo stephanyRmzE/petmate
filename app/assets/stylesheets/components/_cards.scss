@@ -1,5 +1,6 @@
 .cards {
   display: grid;
+  margin: 0 auto;
   grid-template-columns: 1fr 1fr 1fr;
   justify-items: space-around;
   margin-top: 8px;
@@ -48,8 +49,8 @@
   height: 330px;
   text-align: center;
   background-color: #FE9B3DE6;
-  border-radius: 1%;
-  box-shadow: 5px;
+  border-radius: 3%;
+  box-shadow: 0 15px 60px rgba(0, 0, 0, 0.5)
 }
 
 .card-image{
@@ -73,9 +74,9 @@
 }
 
 .card-description h2 {
-  font-size: 16px;
+  font-size: 26px;
   font-weight: bold;
-  color: rgb(117, 117, 117);
+  color: rgb(255, 255, 255);
   padding: 0 10px;
 }
 
@@ -94,5 +95,15 @@
 .card-edit{
   display: flex;
   justify-content: right;
+  text-decoration: none;
+}
+
+.card-action a{
+  font-size: 22px;
+  border: 1px solid white;
+  background-color: white;
+  padding: 2px;
+  border-radius: 5px;
+  color: #FE9B3DE6;
   text-decoration: none;
 }
