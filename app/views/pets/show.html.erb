@@ -1,15 +1,18 @@
 <div class="container">
   <div class="row justify-content-center">
-    <div class="col-12">
-      <%= link_to "Add Pet", new_pet_path(@pet), class:"btn btn-flat", style:"float:right; margin-top:20px" %>
-
+    <div class="col-5">
         <div class="container">
-          <h2><%= @pet.name %></h2>
-          <p>Is a <%= @pet.breed %> <%= @pet.species %> <%= @pet.age %> years old </p>
-          <div>
-          <%= cl_image_tag @pet.photo.key, height: 300, width: 400, crop: :fill %>
+          <div class = card>
+            <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= @pet.photo.url %>)">
+            </div>
+            <div class = "card-description">
+              <h2><%= @pet.name %></h2>
+              <p>Is a <%= @pet.breed.downcase %> <%= @pet.species.downcase %> <%= @pet.age %> years old </p>
+            </div>
           </div>
         </div>
+      </div>
+      </div>
     </div>
   </div>
 </div>
