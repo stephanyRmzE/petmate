@@ -27,14 +27,15 @@ class PetsController < ApplicationController
   end
 
   def update
+    authorize @pet
     @pet.update(pet_params)
     redirect_to pet_path(@pet)
   end
 
   def destroy
-    @user = @pet.user
+    authorize @pet
     @pet.destroy
-    redirect_to user_path(@user)
+    redirect_to pets_path, notice: "Pet was deleted"
   end
 
   private
