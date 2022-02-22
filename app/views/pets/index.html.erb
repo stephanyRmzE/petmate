@@ -5,6 +5,18 @@
         <% @pets.each do |pet| %>
           <div class = "card" >
             <a  href="<%= pet_path(pet)%>">
+              <div>
+              <h2><%= pet.name %></h2>
+              <h2><%= link_to 'Show', pet %></h2>
+              <% if pet.user == current_user %>
+                <h2><%= link_to 'Edit', edit_pet_path(pet) %></h2>
+                <h2><%= link_to 'Update', pet %></h2>
+                <h2><%= link_to 'Destroy', pet, method: :delete, data: { confirm: 'Are you sure?' } %></h2>
+              <% end %>
+              <% if policy(pet).create? %>
+                <%= link_to "New pet", new_pet_path %>
+              <% end %>
+            </div>
               <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
                                     url(<%= cl_image_path(pet.photo.key)%>)">
               </div>
