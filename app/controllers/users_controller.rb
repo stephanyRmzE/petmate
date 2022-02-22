@@ -1,7 +1,4 @@
 class UsersController < ApplicationController
-  def create
-    super
-  end
 
   def show
     @user = authorize User.find(params[:id])
