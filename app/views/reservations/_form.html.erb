@@ -1,0 +1,7 @@
+<h2>
+  <%= simple_form_for [@pet, @reservation] do |f| %>
+    <%= f.input :start_date, as: :date, html5: true %>
+    <%= f.input :end_date, as: :date, html5: true %>
+    <%= f.submit %>
+  <% end %>
+</h2>
