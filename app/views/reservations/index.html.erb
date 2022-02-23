@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-11">
+      <div class = "cards">
+        <% @reservations.each do |reservation| %>
+          <div class = "card" >
+           <h1>Reservation:<%= reservation.start_date %> - <%= reservation.end_date %></h1>
+            <a>
+              </div>
+              <div class = "card-description">
+                <h2><%= reservation.pet.name %></h2>
+              </div>
+              <div>
+                <h2><%= link_to 'Show', pet_reservation_path(reservation.pet, reservation) %></h2>
+              </div>
+            </a>
+          </div>
+        <% end %>
+      </div>
+      <div>
+        <% if policy(Reservation).create? %>
+          <%= link_to "New reservation", new_pet_reservation_path %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

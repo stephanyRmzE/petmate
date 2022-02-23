@@ -1,7 +1,8 @@
 class ReservationsController < ApplicationController
-  before_action :set_reservation, only: [:show, :destroy, :update]
+  before_action :set_reservation, only: [:show, :destroy, :update, :edit]
   def index
-    @reservation = Reservation.all
+    @reservations = Reservation.where(user_id: current_user.id)
+    authorize @reservations
   end
 
   def new
@@ -18,13 +19,21 @@ class ReservationsController < ApplicationController
     @reservation.pet = @pet
     authorize @reservation
     if @reservation.save
-      redirect_to reservations_path(@user)
+      redirect_to pet_reservations_path(@user)
     else
       render :new
     end
   end
 
   def show
+  end
+
+  def edit
+  end
+
+  def update
+    @reservation.update(reservation_params)
+    redirect_to reservation_path(@reservation)
   end
 
   def destroy
@@ -39,6 +48,6 @@ class ReservationsController < ApplicationController
   end
 
   def reservation_params
-    params.require(:reservation).permit(:start_date, :end_date, :user, :pet)
+    params.require(:reservation).permit(:start_date, :end_date)
   end
 end
