@@ -13,6 +13,20 @@
   color: white;
 }
 
+.btn-flat-orange {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 15px;
+  background: #f3724c;
+  transition: background 0.3s ease;
+  text-decoration: none;
+}
+
+.btn-flat-orange:hover {
+  background: #f3724c;
+  color: white;
+}
+
 .btn-pink {
   margin-top: 20px;
   color: #f3f3f3;
