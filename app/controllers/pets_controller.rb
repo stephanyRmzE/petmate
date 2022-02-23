@@ -1,7 +1,12 @@
 class PetsController < ApplicationController
   before_action :set_pet, only: [:show, :update, :destroy]
   def index
-    @pets = policy_scope(Pet)
+    if params[:query].present?
+      @busqueda = params[:query].capitalize
+      @pets = policy_scope(Pet.where(species: @busqueda))
+    else
+      @pets = policy_scope(Pet)
+    end
   end
 
   def new
