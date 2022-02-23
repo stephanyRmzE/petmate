@@ -35,4 +35,8 @@ class PetPolicy < ApplicationPolicy
   def destroy?
     record.user == user
   end
+
+  def rent?
+    record.user != user
+  end
 end
