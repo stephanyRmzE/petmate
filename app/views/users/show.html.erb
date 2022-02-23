@@ -1,6 +1,4 @@
-<div class="d-flex p-2 bd-highlight">
-  <div class="d-flex justify-content-center">
-      <div class="user-banner m-3">
+      <div class="user-banner">
         <% if @user.photo.key.nil?%>
         <%= image_tag "cat-icon.png",
         width: 150, height: 150, style: "border-radius: 50%" %>
@@ -13,8 +11,6 @@
         <%= link_to "Update your profile", edit_user_path(@user), class: "btn btn-outline-warning" %>
         <%= link_to "Delete your profile", user_path(@user), method: :delete, class: "btn btn-outline-danger", data: { confirm: "Are you sure you want to delete your account?" } %>
       </div>
-  </div>
-</div>
 
 <div class="container m-3">
   <div class="row justify-content-center">
