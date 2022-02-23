@@ -15,6 +15,9 @@
                   <% if policy(@pet).destroy? %>
                     <h2><%= link_to 'Destroy', pet_path(@pet), method: :delete, data: { confirm: 'Are you sure?' } %></h2>
                   <% end %>
+                  <% if policy(@pet).rent? %>
+                    <h2><%= link_to 'Rent', new_pet_reservation_path(@pet)%></h2>
+                  <% end %>
               </div>
             </div>
           </div>
