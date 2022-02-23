@@ -19,17 +19,14 @@ class ReservationsController < ApplicationController
     @reservation.pet = @pet
     authorize @reservation
     if @reservation.save
-      redirect_to pet_reservations_path(@user)
+      redirect_to user_path(@user)
     else
       render :new
     end
   end
 
   def show
-    @reservation = Reservation.new
-  end
-
-  def edit
+    @pet = Pet.find(params[:pet_id])
   end
 
   def update
