@@ -3,7 +3,11 @@ class PetsController < ApplicationController
   def index
     if params[:query].present?
       @busqueda = params[:query].capitalize
-      @pets = policy_scope(Pet.where(species: @busqueda))
+      if Pet::CATEGORY.include?(@busqueda)
+        @pets = policy_scope(Pet.where(species: @busqueda))
+      else
+        @pets = policy_scope(Pet)
+      end
     else
       @pets = policy_scope(Pet)
     end
