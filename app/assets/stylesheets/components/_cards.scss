@@ -45,18 +45,18 @@
 
 .card{
   margin-top: 20px;
-  width: 350px;
+  width: 100%;
   height: 510px;
   text-align: center;
   background-color: #ffffffe6;
   border-radius: 3%;
-  box-shadow: 20px 20px 10px grey;
+  box-shadow: 10px 6px 10px #a3a2a2;
 }
 
 .card-image{
     background-position: center;
     background-repeat: no-repeat;
-    border-radius: 15px 15px 0px 0px;
+    border-radius: 10px 10px 0px 0px;
     height: 280px;
     background-size: cover;
   }
@@ -70,15 +70,14 @@
 
 .card-description{
   text-decoration: none;
-  justify-content: center;
-  margin-top: 10%;
+  margin-top: 10px;
+  align-content: center;
 }
 
 .card-description h2 {
   font-size: 26px;
   font-weight: bold;
   color: #FE9B3DE6;
-  padding: 0 10px;
 }
 
 .card-description p {
@@ -117,9 +116,6 @@
   margin-bottom: 1%;
 }
 
-h2 {
-  margin-top: 4%;
-}
 
 .cards a {
   margin-top: 5%;
