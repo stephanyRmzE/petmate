@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 
   def show
     @user = authorize User.find(params[:id])
+    @pets = Pet.where("user_id = ?", "#{current_user.id}")
   end
 
   def edit
