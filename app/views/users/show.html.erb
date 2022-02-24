@@ -9,34 +9,13 @@
   <%= link_to "Update your profile", edit_user_path(@user), class: "btn btn-outline-warning" %>
   <%= link_to "Delete your profile", user_path(@user), method: :delete, class: "btn btn-outline-danger", data: { confirm: "Are you sure you want to delete your account?" } %>
 </div>
-<<<<<<< HEAD
 
-  <div class="row justify-content-center">
-    <div class="col">
-      <div class = "container"></div>
-        <h2 style = "text-align:center">Your pets</h2>
-        <div class = "cards">
-          <% @pets.each do |pet| %>
-            <a href="<%= pet_path(pet)%>">
-              <div class = "card" style = "height: 250px" >
-                <% if pet.photo.attached? %>
-                  <div class="card-image" style="background-image: url('<%= cl_image_path pet.photo.key %>')"></div>
-                <% else %>
-                  <div class="card-image" style="background-image: url('')"></div>
-                <% end %>
-                <div class = "card-description" >
-                  <h2><%= pet.name %></h2>
-                </div>
-              </div>
-            </a>
-          <% end %>
-=======
 <div class="container">
   <div class="row justify-content-center">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col">
-          <h2 style = "text-align:center">Your pets</h2>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col">
+        <h2 style = "text-align:center">Your pets</h2>
           <div class = "cards">
             <% @pets.each do |pet| %>
               <a href="<%= pet_path(pet)%>">
@@ -53,46 +32,6 @@
               </a>
             <% end %>
           </div>
-          </div>
-          <div class="col">
-            <div class="container">
-              <div class="row justify-content-center">
-                <div class="col">
-                  <h3 style = "text-align:center">Received reservations</h3>
-                  <div class = "cards-reservation">
-                    <% @user.received_reservations.each do |reservation| %>
-                      <div class = card style = "height: 300px">
-                        <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path(reservation.pet.photo.key)%>)"></div>
-                        <div class = "card-description">
-                          <h2><%= reservation.pet.name %></h2>
-                          <p>Rented from <%= reservation.start_date %> - <%= reservation.end_date%> by <%= reservation.user.first_name%> <%= reservation.user.last_name%></p>
-                        </div>
-                      </div>
-                    <% end %>
-                  </div>
-                </div>
-                <div class="col">
-                  <h3 style = "text-align:center">Sent reservations</h3>
-                  <div class = "cards-reservation">
-                    <% @user.sent_reservations.each do |reservation| %>
-                      <div class = card style = "height: 300px">
-                        <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path(reservation.pet.photo.key)%>)"></div>
-                        <div class = "card-description">
-                          <h2><%= reservation.pet.name %></h2>
-                          <p>Rented from <%= reservation.start_date %> - <%= reservation.end_date%> by <%= reservation.user.first_name%> <%= reservation.user.last_name%></p>
-                        </div>
-                      </div>
-
-                    <% end %>
-                    <div class = "card-description" >
-                      <h2><%= pet.name %></h2>
-                    </div>
-                  </div>
-                </a>
-              <% end %>
-            </div>
-          </div>
->>>>>>> f3caaafc5ac126593b61c3838f1816ab1a9bb34a
         </div>
       </div>
     </div>
