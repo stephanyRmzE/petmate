@@ -96,8 +96,18 @@ reptile_photos = ['https://images.unsplash.com/photo-1617540021016-72023b487e99?
     description: Faker::Lorem.paragraph_by_chars(number: 256, supplemental: false),
     user: owner_one
   )
-  file = URI.open(cat_photos.sample)
-  pet.photos.attach(io: file, filename: pet.name, content_type: 'image/jpeg')
+  file1 = URI.open(cat_photos.sample)
+  file2 = URI.open(cat_photos.sample)
+  file3 = URI.open(cat_photos.sample)
+  file4 = URI.open(cat_photos.sample)
+  file5 = URI.open(cat_photos.sample)
+  file6 = URI.open(cat_photos.sample)
+  pet.photos.attach([{ io: file1, filename: pet.name, content_type: 'image/jpeg' },
+                     { io: file2, filename: pet.name, content_type: 'image/jpeg' },
+                     { io: file3, filename: pet.name, content_type: 'image/jpeg' },
+                     { io: file4, filename: pet.name, content_type: 'image/jpeg' },
+                     { io: file5, filename: pet.name, content_type: 'image/jpeg' },
+                     { io: file6, filename: pet.name, content_type: 'image/jpeg' }])
 end
 
 4.times do
@@ -109,8 +119,18 @@ end
     description: Faker::Lorem.paragraph_by_chars(number: 256, supplemental: false),
     user: owner_one
   )
-  file = URI.open(dog_photos.sample)
-  pet.photos.attach(io: file, filename: pet.name, content_type: 'image/jpeg')
+  file1 = URI.open(dog_photos.sample)
+  file2 = URI.open(dog_photos.sample)
+  file3 = URI.open(dog_photos.sample)
+  file4 = URI.open(dog_photos.sample)
+  file5 = URI.open(dog_photos.sample)
+  file6 = URI.open(dog_photos.sample)
+  pet.photos.attach([{ io: file1, filename: pet.name, content_type: 'image/jpeg' },
+                     { io: file2, filename: pet.name, content_type: 'image/jpeg' },
+                     { io: file3, filename: pet.name, content_type: 'image/jpeg' },
+                     { io: file4, filename: pet.name, content_type: 'image/jpeg' },
+                     { io: file5, filename: pet.name, content_type: 'image/jpeg' },
+                     { io: file6, filename: pet.name, content_type: 'image/jpeg' }])
 end
 
 4.times do
@@ -122,8 +142,18 @@ end
     description: Faker::Lorem.paragraph_by_chars(number: 256, supplemental: false),
     user: owner_two
   )
-  file = URI.open(bird_photos.sample)
-  pet.photos.attach(io: file, filename: pet.name, content_type: 'image/jpeg')
+  file1 = URI.open(bird_photos.sample)
+  file2 = URI.open(bird_photos.sample)
+  file3 = URI.open(bird_photos.sample)
+  file4 = URI.open(bird_photos.sample)
+  file5 = URI.open(bird_photos.sample)
+  file6 = URI.open(bird_photos.sample)
+  pet.photos.attach([{ io: file1, filename: pet.name, content_type: 'image/jpeg' },
+                     { io: file2, filename: pet.name, content_type: 'image/jpeg' },
+                     { io: file3, filename: pet.name, content_type: 'image/jpeg' },
+                     { io: file4, filename: pet.name, content_type: 'image/jpeg' },
+                     { io: file5, filename: pet.name, content_type: 'image/jpeg' },
+                     { io: file6, filename: pet.name, content_type: 'image/jpeg' }])
 end
 
 4.times do
@@ -135,8 +165,18 @@ end
     description: Faker::Lorem.paragraph_by_chars(number: 256, supplemental: false),
     user: owner_two
   )
-  file = URI.open(reptile_photos.sample)
-  pet.photos.attach(io: file, filename: pet.name, content_type: 'image/jpeg')
+  file1 = URI.open(reptile_photos.sample)
+  file2 = URI.open(reptile_photos.sample)
+  file3 = URI.open(reptile_photos.sample)
+  file4 = URI.open(reptile_photos.sample)
+  file5 = URI.open(reptile_photos.sample)
+  file6 = URI.open(reptile_photos.sample)
+  pet.photos.attach([{ io: file1, filename: pet.name, content_type: 'image/jpeg' },
+                     { io: file2, filename: pet.name, content_type: 'image/jpeg' },
+                     { io: file3, filename: pet.name, content_type: 'image/jpeg' },
+                     { io: file4, filename: pet.name, content_type: 'image/jpeg' },
+                     { io: file5, filename: pet.name, content_type: 'image/jpeg' },
+                     { io: file6, filename: pet.name, content_type: 'image/jpeg' }])
 end
 
 puts "seeding completed"
