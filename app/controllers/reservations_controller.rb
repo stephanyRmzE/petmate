@@ -39,6 +39,15 @@ class ReservationsController < ApplicationController
   end
 
   def accept
+    @reservation.accepted!
+    @user = current_user
+    redirect_to user_path(@user)
+  end
+
+  def reject
+    @reservation.rejected!
+    @user = current_user
+    redirect_to user_path(@user)
   end
 
   private
