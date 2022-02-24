@@ -72,7 +72,7 @@
       <div class = "cards-reservation">
         <% @user.sent_reservations.each do |reservation| %>
           <div class = card >
-            <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path(reservation.pet.photo.key)%>)"></div>
+            <div class="card-image" style="background-image:url(<%= cl_image_path(reservation.pet.photos[0].key)%>)"></div>
             <div class = "card-description">
               <h2><%= reservation.pet.name %></h2>
               <p>Rented from <%= reservation.start_date %> - <%= reservation.end_date%> by <%= reservation.user.first_name%> <%= reservation.user.last_name%>
