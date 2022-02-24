@@ -6,19 +6,47 @@
 
 <input name="tab" id="tab1" type="radio" checked />
 <section class="tab-content">
-   <div class="user-banner">
-        <% if @user.photo.key.nil?%>
-        <%= image_tag "cat-icon.png",
-        width: 150, height: 150, style: "border-radius: 50%" %>
-        <% else%>
-        <%= cl_image_tag @user.photo.key,
-        width: 150, height: 150, crop: :thumb, gravity: :face, zoom: 0.7, radius: :max %>
-        <% end%>
-        <h1><%= @user.first_name %>'s Profile Page</h1>
-        <%= link_to "Add a new pet", new_pet_path, class: "btn btn-outline-info" %>
-        <%= link_to "Update your profile", edit_user_path(@user), class: "btn btn-outline-warning" %>
-        <%= link_to "Delete your profile", user_path(@user), method: :delete, class: "btn btn-outline-danger", data: { confirm: "Are you sure you want to delete your account?" } %>
+  <div class="user-banner">
+  <% if @user.photo.key.nil?%>
+    <%= image_tag "cat-icon.png",
+    width: 150, height: 150, style: "border-radius: 50%" %>
+  <% else%>
+    <%= cl_image_tag @user.photo.key,
+    width: 150, height: 150, crop: :thumb, gravity: :face, zoom: 0.7, radius: :max %>
+  <% end%>
+  <h1><%= @user.first_name %>'s Profile Page</h1>
+    <%= link_to "Add a new pet", new_pet_path, class: "btn btn-outline-info" %>
+    <%= link_to "Update your profile", edit_user_path(@user), class: "btn btn-outline-warning" %>
+    <%= link_to "Delete your profile", user_path(@user), method: :delete, class: "btn btn-outline-danger", data: { confirm: "Are you sure you want to delete your account?" } %>
+</div>
+
+<div class="container">
+  <div class="row justify-content-center">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col">
+            <h2 style = "text-align:center">Your pets</h2>
+            <div class = "cards">
+              <% @user.pets.each do |pet| %>
+                <a href="<%= pet_path(pet)%>">
+                  <div class = "card" style = "height: 250px" >
+                    <% if pet.photo.attached? %>
+                      <div class="card-image" style="background-image: url('<%= cl_image_path pet.photo.key %>')"></div>
+                    <% else %>
+                      <div class="card-image" style="background-image: url('')"></div>
+                    <% end %>
+                    <div class = "card-description" >
+                      <h2><%= pet.name %></h2>
+                    </div>
+                  </div>
+                </a>
+              <% end %>
+            </div>
+          </div>
+        </div>
       </div>
+  </div>
+</div>
 </section>
 <input name="tab" id="tab2" type="radio" />
 <section class="tab-content">
