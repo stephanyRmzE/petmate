@@ -8,6 +8,13 @@
   row-gap: 20px;
 }
 
+.card-index {
+  &:hover {
+		transform: translateY(-20px);
+    transition: transform 0.5s;
+  }
+}
+
 .cards-reservation {
   display: grid;
   margin: 0 auto;
@@ -17,7 +24,7 @@
   row-gap: 20px;
   height: 280px;
 
-  .card{
+  .card {
   margin-top: 20px;
   width: 100%;
   text-align: center;
@@ -26,7 +33,7 @@
   box-shadow: 10px 6px 10px #a3a2a2;
 }
 
-  .card-image{
+  .card-image {
     background-position: center;
     background-repeat: no-repeat;
     border-radius: 10px 10px 0px 0px;
@@ -110,7 +117,7 @@
 
 .card-description p {
   font-size: 16px;
-  line-height: 1.4;
+  line-height: 0.5;
   opacity: .7;
   padding: 0 10px;
 }

@@ -4,7 +4,7 @@
       <div class = "cards">
         <% @pets.each do |pet| %>
           <a href="<%= pet_path(pet)%>">
-            <div class = "card" style = "height: 350px" >
+            <div class = "card card-index" style = "height: 350px" >
               <% if pet.photos.attached? %>
                 <div class="card-image" style="background-image: url('<%= cl_image_path pet.photos[0].key %>')"></div>
               <% else %>
@@ -12,6 +12,8 @@
               <% end %>
               <div class = "card-description" >
                 <h2><%= pet.name %></h2>
+                <p>Breed: <%= pet.breed %></p>
+                <p>Age: <%= pet.age %></p>
               </div>
             </div>
           </a>
