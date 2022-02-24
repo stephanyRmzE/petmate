@@ -3,7 +3,7 @@
   background-position: left;
   background-repeat: no-repeat;
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("https://images.unsplash.com/photo-1581171383994-afd540b6a4da?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1072&q=80");
-  height: calc(100vh - 78px);
+  height: calc(100vh - 78px - 80px);
 
   }
 
@@ -24,6 +24,6 @@
 
 .container-md, .container-sm, .container {
     max-width: 720px;
-    padding-top: 355px;
+    padding-top: 255px;
     padding-left: 35px;
 }
