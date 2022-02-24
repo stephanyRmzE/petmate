@@ -44,7 +44,7 @@ class PetsController < ApplicationController
   def destroy
     authorize @pet
     @pet.destroy
-    redirect_to pets_path, notice: "Pet was deleted"
+    redirect_to user_path, notice: "Your pet was removed"
   end
 
   private

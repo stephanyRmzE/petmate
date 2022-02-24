@@ -7,21 +7,22 @@
   <% end %>
 </div>
 
-<div class="container">
+<div class="container m-5">
   <div class="row justify-content-center">
-    <div class="col-11">
-
-      <p> A <%= @pet.breed.downcase %> <%= @pet.species.downcase %> who is <%= @pet.age %> years old. </p>
-      <p><%= @pet.description %></p>
-          <% if policy(@pet).edit? %>
-            <h2><%= link_to 'Edit', edit_pet_path(@pet), class: "btn btn-outline-warning" %></h2>
-          <% end %>
-          <% if policy(@pet).destroy? %>
-            <h2><%= link_to 'Remove', pet_path(@pet), class: "btn btn-outline-danger", method: :delete, data: { confirm: 'Are you sure?' } %></h2>
-          <% end %>
-          <% if policy(@pet).rent? %>
-            <h2><%= link_to 'Rent', new_pet_reservation_path(@pet), class: "btn btn-outline-success" %></h2>
-          <% end %>
+    <div class="col-11 p-5">
+      <p class="pet-details">🐾 A <%= @pet.breed.downcase %> <%= @pet.species.downcase %> who is <%= @pet.age %> years old. </p>
+      <p class="pet-details">🐾 <%= @pet.description %></p>
+      <div class="d-flex justify-content-center">
+        <% if policy(@pet).edit? %>
+          <h2 class="m-3"><%= link_to 'Edit', edit_pet_path(@pet), class: "btn btn-outline-warning" %></h2>
+        <% end %>
+        <% if policy(@pet).destroy? %>
+          <h2 class="m-3"><%= link_to 'Remove', pet_path(@pet), class: "btn btn-outline-danger", method: :delete, data: { confirm: 'Are you sure?' } %></h2>
+        <% end %>
+        <% if policy(@pet).rent? %>
+          <h2 class="m-3"><%= link_to 'Rent', new_pet_reservation_path(@pet), class: "btn btn-outline-success" %></h2>
+        <% end %>
       </div>
     </div>
+  </div>
 </div>

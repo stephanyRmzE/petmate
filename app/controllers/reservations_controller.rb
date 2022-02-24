@@ -18,7 +18,7 @@ class ReservationsController < ApplicationController
     @reservation.pet = @pet
     authorize @reservation
     if @reservation.save
-      redirect_to pets_path(@user), notice: "Congratulation 🎉 Your reservation is well done"
+      redirect_to pets_path(@user), notice: "Congratulation 🎉 Your reservation was successful"
     else
       render :new
     end
@@ -38,6 +38,9 @@ class ReservationsController < ApplicationController
     redirect_to users_path
   end
 
+  def accept
+  end
+
   private
 
   def set_reservation
@@ -45,6 +48,6 @@ class ReservationsController < ApplicationController
   end
 
   def reservation_params
-    params.require(:reservation).permit(:start_date, :end_date)
+    params.require(:reservation).permit(:start_date, :end_date, :status)
   end
 end
