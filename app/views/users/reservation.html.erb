@@ -1,35 +1,67 @@
+<section class="tabs-container">
+   <label for="tab1"> Profile </label>
+   <label for="tab2"> Second Tab </label>
+   <label for="tab3"> Third Tab </label>
+</section>
 
-<div class="container">
-              <div class="row justify-content-center">
-              <h1>My Reservations</h1>
-                <div class="col">
-                  <h3 style = "text-align:center">Received reservations</h3>
-                  <div class = "cards-reservation">
-                    <% @user.received_reservations.each do |reservation| %>
-                      <div class = card >
-                        <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path(reservation.pet.photo.key)%>)"></div>
-                        <div class = "card-description">
-                          <h2><%= reservation.pet.name %></h2>
-                          <p>Rented from <%= reservation.start_date %> - <%= reservation.end_date%> by <%= reservation.user.first_name%> <%= reservation.user.last_name%></p>
-                        </div>
-                      </div>
-                    <% end %>
-                  </div>
-                </div>
-                <div class="col">
-                  <h3 style = "text-align:center">Sent reservations</h3>
-                  <div class = "cards-reservation">
-                    <% @user.sent_reservations.each do |reservation| %>
-                      <div class = card >
-                        <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path(reservation.pet.photo.key)%>)"></div>
-                        <div class = "card-description">
-                          <h2><%= reservation.pet.name %></h2>
-                          <p>Rented from <%= reservation.start_date %> - <%= reservation.end_date%> by <%= reservation.user.first_name%> <%= reservation.user.last_name%></p>
+<input name="tab" id="tab1" type="radio" checked />
+<section class="tab-content">
+   <div class="user-banner">
+        <% if @user.photo.key.nil?%>
+        <%= image_tag "cat-icon.png",
+        width: 150, height: 150, style: "border-radius: 50%" %>
+        <% else%>
+        <%= cl_image_tag @user.photo.key,
+        width: 150, height: 150, crop: :thumb, gravity: :face, zoom: 0.7, radius: :max %>
+        <% end%>
+        <h1><%= @user.first_name %>'s Profile Page</h1>
+        <%= link_to "Add a new pet", new_pet_path, class: "btn btn-outline-info" %>
+        <%= link_to "Update your profile", edit_user_path(@user), class: "btn btn-outline-warning" %>
+        <%= link_to "Delete your profile", user_path(@user), method: :delete, class: "btn btn-outline-danger", data: { confirm: "Are you sure you want to delete your account?" } %>
+      </div>
+</section>
+<input name="tab" id="tab2" type="radio" />
+<section class="tab-content">
+   <p> Contents for tab 2 </p>
+</section>
+<input name="tab" id="tab3" type="radio" />
+<section class="tab-content">
+   <p> Contents for tab 3 </p>
+</section>
 
-                        </div>
-                      </div>
-                    <% end %>
-                  </div>
-                </div>
-              </div>
+
+
+
+<h1>My Reservations</h1>
+<div class=container>
+  <div class="row justify-content-center">
+    <div class="col">
+      <h3 style = "text-align:center">Received reservations</h3>
+      <div class = "cards-reservation">
+        <% @user.received_reservations.each do |reservation| %>
+          <div class = card >
+            <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path(reservation.pet.photo.key)%>)"></div>
+            <div class = "card-description">
+              <h2><%= reservation.pet.name %></h2>
+              <p>Rented from <%= reservation.start_date %> - <%= reservation.end_date%> by <%= reservation.user.first_name%> <%= reservation.user.last_name%></p>
             </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="col">
+      <h3 style = "text-align:center">Sent reservations</h3>
+      <div class = "cards-reservation">
+        <% @user.sent_reservations.each do |reservation| %>
+          <div class = card >
+            <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path(reservation.pet.photo.key)%>)"></div>
+            <div class = "card-description">
+              <h2><%= reservation.pet.name %></h2>
+              <p>Rented from <%= reservation.start_date %> - <%= reservation.end_date%> by <%= reservation.user.first_name%> <%= reservation.user.last_name%>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
