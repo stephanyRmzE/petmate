@@ -18,7 +18,7 @@ class ReservationsController < ApplicationController
     @reservation.pet = @pet
     authorize @reservation
     if @reservation.save
-      redirect_to user_path(@user)
+      redirect_to pets_path(@user), notice: "Congratulation 🎉 Your reservation is well done"
     else
       render :new
     end
