@@ -1,8 +1,7 @@
 class ReservationsController < ApplicationController
   before_action :set_reservation, only: [:show, :destroy, :update, :edit]
   def index
-    @reservations = Reservation.where(user_id: current_user.id)
-    authorize @reservations
+    @reservations = policy_scope(Reservation)
   end
 
   def new
