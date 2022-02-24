@@ -3,8 +3,8 @@
     <div class="row justify-content-md-center">
       <div class="col col-md-6 col-lg-6">
         <div class = "card" style = "height: 300px" >
-              <% if @pet.photo.attached? %>
-                <div class="card-image" style="background-image: url('<%= cl_image_path @pet.photo.key %>')"></div>
+              <% if @pet.photos.attached? %>
+                <div class="card-image" style="background-image: url('<%= cl_image_path pet.photos[0].key %>')"></div>
               <% else %>
                 <div class="card-image" style="background-image: url('cat-icon.png')"></div>
               <% end %>

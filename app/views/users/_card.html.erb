@@ -3,7 +3,7 @@
     <div class="col-5">
         <div class="container">
           <div class = card>
-            <div class="card-image" style="background-image: url(<%= cl_image_path(@pet.photo.key)%>)">
+            <div class="card-image" style="background-image: url(<%= cl_image_path pet.photos[0].key %>)">
             </div>
             <div class = "card-description">
               <h2>You're a reservation with <%= @pet.name %></h2>
