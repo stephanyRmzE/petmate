@@ -1,4 +1,4 @@
-<h2><%= @pet.name %></h2>
+<h2 class="pet-title m-4"><%= @pet.name %></h2>
 
 <div class="cards m-4">
   <% @pet.photos.each do |photo| %>
@@ -6,8 +6,6 @@
     </div>
   <% end %>
 </div>
-
-
 
 <div class="container">
   <div class="row justify-content-center">
