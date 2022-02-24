@@ -4,9 +4,9 @@
       <div class="col col-md-6 col-lg-6">
         <div class = "card" style = "height: 300px" >
               <% if @pet.photo.attached? %>
-                <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @pet.photo.key %>')"></div>
+                <div class="card-image" style="background-image: url('<%= cl_image_path @pet.photo.key %>')"></div>
               <% else %>
-                <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('cat-icon.png')"></div>
+                <div class="card-image" style="background-image: url('cat-icon.png')"></div>
               <% end %>
               <div class = "card-description" >
                 <h2><%= @pet.name %></h2>

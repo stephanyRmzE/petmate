@@ -1,19 +1,18 @@
 <div class="container">
   <div class="row justify-content-center">
-    <div class="col-11">
+    <div class="col-8">
       <div class = "cards">
         <% @reservations.each do |reservation| %>
           <div class = "card" >
-           <h1>Reservation:<%= reservation.start_date %> - <%= reservation.end_date %></h1>
-            <a>
-              </div>
-              <div class = "card-description">
-                <h2><%= reservation.pet.name %></h2>
-              </div>
-              <div>
+            <div class="card-image" style="background-image: url(<%= cl_image_path(reservation.pet.photo.key)%>)">
+            </div>
+            <div class = "card-description">
+              <h2><%= reservation.pet.name %></h2>
+              <p>Rented from <%= reservation.start_date %> - <%= reservation.end_date%></p>
+              <div class="card-action">
                 <h2><%= link_to 'Show', pet_reservation_path(reservation.pet, reservation) %></h2>
               </div>
-            </a>
+            </div>
           </div>
         <% end %>
       </div>
