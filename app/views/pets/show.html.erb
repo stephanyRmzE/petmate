@@ -1,29 +1,29 @@
+<h2><%= @pet.name %></h2>
+
+<div class="cards m-4">
+  <% @pet.photos.each do |photo| %>
+    <div class="card-category" style="background-image: url(<%= cl_image_path(photo.key) %>)">
+    </div>
+  <% end %>
+</div>
+
+
+
 <div class="container">
   <div class="row justify-content-center">
-    <div class="col-5">
-        <div class="container">
-          <div class = card>
-            <div class="card-image" style="background-image: url(<%= cl_image_path(@pet.photo.key)%>)">
-            </div>
-            <div class = "card-description">
-              <h2><%= @pet.name %></h2>
-              <p>Is a <%= @pet.breed.downcase %> <%= @pet.species.downcase %> <%= @pet.age %> years old </p>
-              <div class="card-action">
-                  <% if policy(@pet).edit? %>
-                    <h2><%= link_to 'Edit', edit_pet_path(@pet) %></h2>
-                  <% end %>
-                  <% if policy(@pet).destroy? %>
-                    <h2><%= link_to 'Destroy', pet_path(@pet), method: :delete, data: { confirm: 'Are you sure?' } %></h2>
-                  <% end %>
-                  <% if policy(@pet).rent? %>
-                    <h2><%= link_to 'Rent', new_pet_reservation_path(@pet)%></h2>
-                  <% end %>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="col-11">
+
+      <p> A <%= @pet.breed.downcase %> <%= @pet.species.downcase %> who is <%= @pet.age %> years old. </p>
+      <p><%= @pet.description %></p>
+          <% if policy(@pet).edit? %>
+            <h2><%= link_to 'Edit', edit_pet_path(@pet), class: "btn btn-outline-warning" %></h2>
+          <% end %>
+          <% if policy(@pet).destroy? %>
+            <h2><%= link_to 'Remove', pet_path(@pet), class: "btn btn-outline-danger", method: :delete, data: { confirm: 'Are you sure?' } %></h2>
+          <% end %>
+          <% if policy(@pet).rent? %>
+            <h2><%= link_to 'Rent', new_pet_reservation_path(@pet), class: "btn btn-outline-success" %></h2>
+          <% end %>
       </div>
     </div>
-  </div>
 </div>

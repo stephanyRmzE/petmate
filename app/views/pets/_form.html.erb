@@ -5,7 +5,8 @@
     <%= f.input :age %>
     <%= f.input :species %>
     <%= f.input :breed %>
-    <%= f.input :photo, as: :file %>
+    <%= f.input :description %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
     <%= f.submit %>
   <% end %>
 </h2>

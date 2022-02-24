@@ -22,8 +22,8 @@
             <% @pets.each do |pet| %>
               <a href="<%= pet_path(pet)%>">
                 <div class = "card" style = "height: 250px" >
-                  <% if pet.photo.attached? %>
-                    <div class="card-image" style="background-image: url('<%= cl_image_path pet.photo.key %>')"></div>
+                  <% if pet.photos.attached? %>
+                    <div class="card-image" style="background-image: url('<%= cl_image_path pet.photos[0].key %>')"></div>
                   <% else %>
                     <div class="card-image" style="background-image: url('')"></div>
                   <% end %>
