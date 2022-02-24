@@ -49,6 +49,17 @@ input[name="tab"]:checked + .tab-content{
    display: block;
    animation: slide 0.5s forwards;
 }
+
+input[name="tab"]:checked + .tab-content{
+   display: block;
+   animation: slide 0.5s forwards;
+}
+/* Active Tab Name */
+#tab1:checked ~ .tabs-container #label1,
+#tab2:checked ~ .tabs-container #label2,
+#tab3:checked ~ .tabs-container #label3{
+    background: #ff2525;
+}
 /* Slide animation for tab contents */
 @keyframes slide{
    from{
