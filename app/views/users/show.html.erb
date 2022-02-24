@@ -12,14 +12,12 @@
         <%= link_to "Delete your profile", user_path(@user), method: :delete, class: "btn btn-outline-danger", data: { confirm: "Are you sure you want to delete your account?" } %>
       </div>
 
-<div class="container m-3">
+<div class="container">
   <div class="row justify-content-center">
-    <div>
-
       <div class="container">
         <div class="row justify-content-center">
           <div class="col">
-          <h2>Your pets</h2>
+          <h2 style = "text-align:center">Your pets</h2>
           <div class = "cards">
             <% @pets.each do |pet| %>
               <a href="<%= pet_path(pet)%>">
@@ -38,11 +36,41 @@
           </div>
           </div>
           <div class="col">
-          <h2>Your reservations</h2>
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col">
+                  <h3 style = "text-align:center">Received reservations</h3>
+                  <div class = "cards-reservation">
+                    <% @user.received_reservations.each do |reservation| %>
+                      <div class = card style = "height: 300px">
+                        <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path(reservation.pet.photo.key)%>)"></div>
+                        <div class = "card-description">
+                          <h2><%= reservation.pet.name %></h2>
+                          <p>Rented from <%= reservation.start_date %> - <%= reservation.end_date%> by <%= reservation.user.first_name%> <%= reservation.user.last_name%></p>
+                        </div>
+                      </div>
+                    <% end %>
+                  </div>
+                </div>
+                <div class="col">
+                  <h3 style = "text-align:center">Sent reservations</h3>
+                  <div class = "cards-reservation">
+                    <% @user.sent_reservations.each do |reservation| %>
+                      <div class = card style = "height: 300px">
+                        <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path(reservation.pet.photo.key)%>)"></div>
+                        <div class = "card-description">
+                          <h2><%= reservation.pet.name %></h2>
+                          <p>Rented from <%= reservation.start_date %> - <%= reservation.end_date%> by <%= reservation.user.first_name%> <%= reservation.user.last_name%></p>
+
+                        </div>
+                      </div>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-
-    </div>
   </div>
 </div>
