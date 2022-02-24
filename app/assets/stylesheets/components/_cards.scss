@@ -8,6 +8,34 @@
   row-gap: 20px;
 }
 
+.cards-reservation {
+  display: grid;
+  margin: 0 auto;
+  grid-template-columns: 1fr 1fr ;
+  justify-items: space-around;
+  margin-top: 8px;
+  row-gap: 20px;
+  height: 280px;
+
+  .card{
+  margin-top: 20px;
+  width: 100%;
+  text-align: center;
+  background-color: #ffffffe6;
+  border-radius: 3%;
+  box-shadow: 10px 6px 10px #a3a2a2;
+}
+
+  .card-image{
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 10px 10px 0px 0px;
+    height: 60%;
+    background-size: cover;
+  }
+
+}
+
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .cards {

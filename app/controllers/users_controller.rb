@@ -2,7 +2,6 @@ class UsersController < ApplicationController
   def show
     @user = authorize User.find(params[:id])
     @pets = @user.pets
-    
   end
 
   def edit
@@ -13,6 +12,10 @@ class UsersController < ApplicationController
     @user = authorize User.find(params[:id])
     @user.update(user_params)
     redirect_to user_path(@user)
+  end
+
+  def reservation
+    @user = authorize User.find(params[:id])
   end
 
   def destroy
