@@ -1,19 +1,62 @@
-.tabs-underlined {
-  display: flex;
-  align-items: center;
+/* Tabs Name Container */
+.tabs-container{
+   position: relative;
+   background: #fdc149;
+   width: 120px;
+   height: 100vh;
+   float: left;
+   z-index: 20;
+}
+/* Tabs Names Label */
+.tabs-container label{
+   position: relative;
+   padding: 10px;
+   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+   display: block;
+   font-size: 13px;
+   color: #fff;
+   cursor: pointer;
+   user-select: none;
+}
+/* Hover effect on tabs names */
+.tabs-container label:hover{
+  background: rgba(0, 0, 0, 0.2);
 }
 
-.tabs-underlined .tab-underlined {
-  color: black;
-  padding: 8px;
-  margin: 8px;
-  opacity: .4;
-  cursor: pointer;
-  text-decoration: none;
-  border-bottom: 4px solid transparent;
+/* Content area for tabs */
+.tab-content{
+   position: relative;
+   background: #eee;
+   width: calc(100% - 120px);
+   min-height: 100vh;
+   padding: 15px;
+   float: left;
+   box-sizing: border-box;
+   z-index: 19;
+   display: none;
+}
+.tab-content:after{
+   content: "";
+   clear: both;
 }
 
-.tabs-underlined .tab-underlined.active {
-  opacity: 1;
-  border-bottom: 3px solid #555555;
+/* Hide input radio from users */
+input[name="tab"]{
+   display: none;
+}
+/* Show tab when input checked */
+input[name="tab"]:checked + .tab-content{
+   display: block;
+   animation: slide 0.5s forwards;
+}
+/* Slide animation for tab contents */
+@keyframes slide{
+   from{
+     left: -100%;
+     opacity: 0;
+   }
+   to{
+     left: 0;
+     opacity: 1;
+   }
 }
