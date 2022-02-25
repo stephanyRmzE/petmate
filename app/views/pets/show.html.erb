@@ -1,6 +1,6 @@
 <h2 class="pet-title m-4"><%= @pet.name %></h2>
 
-<div class="d-flex mt-5">
+<div class="d-flex mt-4">
   <div class="container">
     <div class="row justify-content-center">
       <div class="col">
@@ -34,7 +34,7 @@
         </div>
         <div class="col-cards">
           <h4>🐾 Description:</h4>
-          <p class="pet-details px-4"> <%= @pet.description %></p>
+          <div><p class="pet-details px-4"> <%= @pet.description %></p></div>
         </div>
         <div class="d-flex justify-content-center">
           <% if policy(@pet).edit? %>
@@ -44,7 +44,7 @@
             <h2 class="m-3"><%= link_to 'Remove', pet_path(@pet), class: "btn btn-outline-danger", method: :delete, data: { confirm: 'Are you sure?' } %></h2>
           <% end %>
           <% if policy(@pet).rent? %>
-            <h2 class="m-3"><%= link_to 'Rent', new_pet_reservation_path(@pet), class: "btn btn-outline-success" %></h2>
+            <h2 class="m-3"><%= link_to 'Rent', new_pet_reservation_path(@pet), class: "btn btn-flat-orange", style: "width: 150px;"%></h2>
           <% end %>
         </div>
       </div>
