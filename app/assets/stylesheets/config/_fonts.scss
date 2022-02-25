@@ -1,8 +1,10 @@
 // Import Google fonts
-@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Quicksand&display=swap');
+
 
 // Define fonts for body and headers
 $body-font: "Quicksand", "Helvetica", "sans-serif";
+$navbar-font: 'Nanum Pen Script', cursive;
 $headers-font: "Quicksand", "Helvetica", "sans-serif";
 
 // To use a font file (.woff) uncomment following lines
