@@ -54,7 +54,6 @@
 <input name="tab" id="tab2" type="radio" <%= "checked" if params["tab"] == "new-pet-requests" %> />
 <section class="tab-content">
 <div class=container>
-<h3 style = "text-align:center">Pets I'm borrowing</h3>
   <div class="row justify-content-center">
     <div class="col">
       <h3 style = "text-align:center">Pending</h3>
@@ -94,19 +93,18 @@
 <input name="tab" id="tab3" type="radio" <%= "checked" if params["tab"] == "borrow-requests" %>/>
 <section class="tab-content">
 <div class=container>
-<h3 style = "text-align:center">Received reservations</h3>
   <div class="row justify-content-center">
     <div class="col">
       <h3 style = "text-align:center">Pending</h3>
       <div class = "cards-reservation">
         <% @user.received_reservations.each do |reservation| %>
           <%if reservation.status == 'pending'%>
-            <div class = card >
-              <div class="card-image" style="background-image: url(<%= cl_image_path(reservation.pet.photos[0].key)%>)"></div>
-              <div class = "card-description">
+            <div class = card-product >
+              <%=cl_image_tag(reservation.pet.photos[0].key)%>
+              <div class="card-product-infos">
                 <h2><%= reservation.pet.name %></h2>
                 <p><%= reservation.user.first_name%> <%= reservation.user.last_name%> wants to be a petmate from <%= reservation.start_date %> - <%= reservation.end_date%></p>
-                  <div class="container-md d-flex justify-content-between px-3">
+                  <div class="card-product-buttons">
                     <%= link_to 'Accept', accept_pet_reservation_path(reservation.pet.id,reservation.id), method: :patch, class: 'btn btn-flat-blue' %>
                     <%= link_to 'Decline', reject_pet_reservation_path(reservation.pet.id,reservation.id), method: :patch, class: 'btn btn-flat-red' %>
                   </div>
