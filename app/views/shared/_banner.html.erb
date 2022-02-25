@@ -1,4 +1,4 @@
-<div class="banner" style=">
+<div class="banner">
   <div class="row justify-content-md-left">
     <div class="col col-sm-6 col-md-6 col-lg-5">
       <div class = "container-home-page">
@@ -9,11 +9,14 @@
             <%= text_field_tag :query,
               params[:query],
               class: "form-control",
-              placeholder: "Whats the species of your new friend"
+              placeholder: "What's the species of your new friend?"
             %>
             <%= submit_tag "Search", class: "btn btn-flat-orange" %>
           </div>
         <% end %>
+        <div class="mt-2">
+        <%= link_to "Or click here to see all the available pets!", pets_path, class: "btn btn-flat-orange" %>
+        </div>
       </div>
     </div>
   </div>
