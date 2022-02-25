@@ -17,12 +17,12 @@
 
 .cards-reservation {
   display: grid;
-  margin: 0 auto;
+  margin: 30px;
   grid-template-columns: 1fr;
   justify-items: space-around;
   margin-top: 8px;
   row-gap: 20px;
-  column-gap: 15px;
+  column-gap: 20px;
   height: 280px;
 
   .card {
@@ -206,4 +206,9 @@
 
 .button-div {
   height: 70px;
+}
+
+.reservation-titles {
+  text-align: center;
+  margin-bottom: 50px;
 }
