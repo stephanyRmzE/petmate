@@ -4,7 +4,7 @@
    <label for="tab3"> Borrow request for my pets </label>
 </section>
 
-<input name="tab" id="tab1" type="radio" checked />
+<input name="tab" id="tab1" type="radio" <%= "checked" if params["tab"].blank?  %>/>
 <section class="tab-content">
   <div class="user-banner">
   <% if @user.photo.key.nil?%>
@@ -51,10 +51,10 @@
 </section>
 
 
-<input name="tab" id="tab2" type="radio" />
+<input name="tab" id="tab2" type="radio" <%= "checked" if params["tab"] == "new-pet-requests" %> />
 <section class="tab-content">
 <div class=container>
-<h3 style = "text-align:center">Sent reservations</h3>
+<h3 style = "text-align:center">Pets I'm borrowing</h3>
   <div class="row justify-content-center">
     <div class="col">
       <h3 style = "text-align:center">Pending</h3>
@@ -73,7 +73,7 @@
         </div>
     </div>
     <div class="col">
-      <h3 style = "text-align:center">Resolved</h3>
+      <h3 style = "text-align:center">Pending</h3>
       <div class = "cards-reservation">
         <% @user.sent_reservations.each do |reservation| %>
           <%unless reservation.status == 'pending'%>
@@ -91,7 +91,7 @@
   </div>
 </div>
 </section>
-<input name="tab" id="tab3" type="radio" />
+<input name="tab" id="tab3" type="radio" <%= "checked" if params["tab"] == "borrow-requests" %>/>
 <section class="tab-content">
 <div class=container>
 <h3 style = "text-align:center">Received reservations</h3>

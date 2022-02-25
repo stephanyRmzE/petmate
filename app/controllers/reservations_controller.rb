@@ -18,7 +18,7 @@ class ReservationsController < ApplicationController
     @reservation.pet = @pet
     authorize @reservation
     if @reservation.save
-      redirect_to pets_path(@user), notice: "Congratulation 🎉 Your reservation was successful"
+      redirect_to user_path(@user, tab: "new-pet-requests"), notice: "Congratulation 🎉 Your reservation was successful"
     else
       render :new
     end
@@ -42,13 +42,13 @@ class ReservationsController < ApplicationController
     @reservation.accepted!
     @user = current_user
     authorize @reservation
-    redirect_to user_path(@user)
+    redirect_to user_path(@user, tab: "borrow-requests")
   end
 
   def reject
     @reservation.rejected!
     @user = current_user
-    redirect_to user_path(@user)
+    redirect_to user_path(@user, tab: "borrow-requests")
   end
 
   private
