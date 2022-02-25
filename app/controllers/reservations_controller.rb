@@ -1,5 +1,5 @@
 class ReservationsController < ApplicationController
-  before_action :set_reservation, only: [:show, :destroy, :update, :edit]
+  before_action :set_reservation, only: [:show, :destroy, :update, :edit, :accept, :reject]
   def index
     @reservations = policy_scope(Reservation)
   end
@@ -41,6 +41,7 @@ class ReservationsController < ApplicationController
   def accept
     @reservation.accepted!
     @user = current_user
+    authorize @reservation
     redirect_to user_path(@user)
   end
 

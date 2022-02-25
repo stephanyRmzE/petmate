@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   def show
     @user = authorize User.find(params[:id])
     @pets = @user.pets
+    @reservations = Reservation.all
   end
 
   def edit
