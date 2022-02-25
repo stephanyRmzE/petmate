@@ -12,7 +12,7 @@
 .card-category {
   background-size: cover;
   background-position: center;
-  height: 400px;
+  height: 260px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -66,15 +66,18 @@
 }
 
 .col-cards {
-  margin-top: 20px;
+  margin-top: 10px;
   width: 100%;
   background-color: #ffffffe6;
   border-radius: 15px;
-  box-shadow: 10px 6px 10px #a3a2a2;
+  box-shadow: 5px 3px 5px #a3a2a2;
   padding: 7px;
-  padding-left: 18px;
-  padding-top: 18px;
   border: 2px solid rgba(224, 223, 223, 0.659);
+  display: flex;
+
+  h4{
+    width: 128px;
+  }
 
 }
 
