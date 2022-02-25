@@ -2,7 +2,7 @@
 .tabs-container{
    position: relative;
    background: #fdc149;
-   width: 120px;
+   width: 12%;
    height: 100vh;
    float: left;
    z-index: 20;
@@ -13,7 +13,8 @@
    padding: 10px;
    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
    display: block;
-   font-size: 13px;
+   font-size: 15px;
+   font-weight: bold;
    color: #fff;
    cursor: pointer;
    user-select: none;
@@ -27,7 +28,7 @@
 .tab-content{
    position: relative;
    background: #eee;
-   width: calc(100% - 120px);
+   width: calc(88% - 0px);
    min-height: 100vh;
    padding: 15px;
    float: left;

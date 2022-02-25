@@ -1,7 +1,7 @@
 <section class="tabs-container">
    <label for="tab1"> Profile </label>
-   <label for="tab2"> My reservations </label>
-   <label for="tab3"> Third Tab </label>
+   <label for="tab2"> Pets I'm borrowing </label>
+   <label for="tab3"> Borrow request for my pets </label>
 </section>
 
 <input name="tab" id="tab1" type="radio" checked />
@@ -54,21 +54,18 @@
 <input name="tab" id="tab2" type="radio" />
 <section class="tab-content">
 <div class=container>
+<h3 style = "text-align:center">Sent reservations</h3>
   <div class="row justify-content-center">
     <div class="col">
       <h3 style = "text-align:center">Pending</h3>
       <div class = "cards-reservation">
-        <% @reservations.each do |reservation| %>
+        <% @user.sent_reservations.each do |reservation| %>
           <%if reservation.status == 'pending'%>
             <div class = card >
               <div class="card-image" style="background-image: url(<%= cl_image_path(reservation.pet.photos[0].key)%>)"></div>
               <div class = "card-description">
                 <h2><%= reservation.pet.name %></h2>
-                <p><%= reservation.user.first_name%> <%= reservation.user.last_name%> wants to be a petmate from <%= reservation.start_date %> - <%= reservation.end_date%></p>
-                <div class="d-flex justify-content-between px-3">
-                  <%= link_to 'Accept', accept_pet_reservation_path(reservation.pet.id,reservation.id), method: :patch, class: 'btn btn-flat-blue' %>
-                  <%= link_to 'Decline', reject_pet_reservation_path(reservation.pet.id,reservation.id), method: :patch, class: 'btn btn-flat-red' %>
-                </div>
+                <p>Waiting for owner response</p>
               </div>
             </div>
           <% end %>
@@ -78,7 +75,7 @@
     <div class="col">
       <h3 style = "text-align:center">Resolved</h3>
       <div class = "cards-reservation">
-        <% @reservations.each do |reservation| %>
+        <% @user.sent_reservations.each do |reservation| %>
           <%unless reservation.status == 'pending'%>
             <div class = card >
               <div class="card-image" style="background-image:url(<%= cl_image_path(reservation.pet.photos[0].key)%>)"></div>
@@ -96,5 +93,45 @@
 </section>
 <input name="tab" id="tab3" type="radio" />
 <section class="tab-content">
-   <p> Contents for tab 3 </p>
+<div class=container>
+<h3 style = "text-align:center">Received reservations</h3>
+  <div class="row justify-content-center">
+    <div class="col">
+      <h3 style = "text-align:center">Pending</h3>
+      <div class = "cards-reservation">
+        <% @user.received_reservations.each do |reservation| %>
+          <%if reservation.status == 'pending'%>
+            <div class = card >
+              <div class="card-image" style="background-image: url(<%= cl_image_path(reservation.pet.photos[0].key)%>)"></div>
+              <div class = "card-description">
+                <h2><%= reservation.pet.name %></h2>
+                <p><%= reservation.user.first_name%> <%= reservation.user.last_name%> wants to be a petmate from <%= reservation.start_date %> - <%= reservation.end_date%></p>
+                  <div class="container-md d-flex justify-content-between px-3">
+                    <%= link_to 'Accept', accept_pet_reservation_path(reservation.pet.id,reservation.id), method: :patch, class: 'btn btn-flat-blue' %>
+                    <%= link_to 'Decline', reject_pet_reservation_path(reservation.pet.id,reservation.id), method: :patch, class: 'btn btn-flat-red' %>
+                  </div>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+        </div>
+    </div>
+    <div class="col">
+      <h3 style = "text-align:center">Resolved</h3>
+      <div class = "cards-reservation">
+        <% @user.received_reservations.each do |reservation| %>
+          <%unless reservation.status == 'pending'%>
+            <div class = card >
+              <div class="card-image" style="background-image:url(<%= cl_image_path(reservation.pet.photos[0].key)%>)"></div>
+              <div class = "card-description">
+                <h2><%= reservation.pet.name %></h2>
+                <p>Status <%=reservation.status %></p>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
 </section>
