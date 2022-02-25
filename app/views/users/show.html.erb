@@ -57,12 +57,12 @@
   <div class="row justify-content-center">
     <div class="col">
       <h3 style = "text-align:center">Pending</h3>
-      <div class = "cards-reservation">
+        <div class = "cards-reservation">
         <% @user.sent_reservations.each do |reservation| %>
           <%if reservation.status == 'pending'%>
-            <div class = card >
-              <div class="card-image" style="background-image: url(<%= cl_image_path(reservation.pet.photos[0].key)%>)"></div>
-              <div class = "card-description">
+            <div class="card-product">
+              <%=cl_image_tag(reservation.pet.photos[0].key)%>
+                <div class="card-product-infos">
                 <h2><%= reservation.pet.name %></h2>
                 <p>Waiting for owner response</p>
               </div>
@@ -76,9 +76,9 @@
       <div class = "cards-reservation">
         <% @user.sent_reservations.each do |reservation| %>
           <%unless reservation.status == 'pending'%>
-            <div class = card >
-              <div class="card-image" style="background-image:url(<%= cl_image_path(reservation.pet.photos[0].key)%>)"></div>
-              <div class = "card-description">
+            <div class="card-product">
+              <%=cl_image_tag(reservation.pet.photos[0].key)%>
+              <div class="card-product-infos">
                 <h2><%= reservation.pet.name %></h2>
                 <p>Status <%=reservation.status %></p>
               </div>
@@ -99,14 +99,15 @@
       <div class = "cards-reservation">
         <% @user.received_reservations.each do |reservation| %>
           <%if reservation.status == 'pending'%>
-            <div class = card-product >
+            <div class ="card-product">
               <%=cl_image_tag(reservation.pet.photos[0].key)%>
               <div class="card-product-infos">
                 <h2><%= reservation.pet.name %></h2>
-                <p><%= reservation.user.first_name%> <%= reservation.user.last_name%> wants to be a petmate from <%= reservation.start_date %> - <%= reservation.end_date%></p>
-                  <div class="card-product-buttons">
-                    <%= link_to 'Accept', accept_pet_reservation_path(reservation.pet.id,reservation.id), method: :patch, class: 'btn btn-flat-blue' %>
-                    <%= link_to 'Decline', reject_pet_reservation_path(reservation.pet.id,reservation.id), method: :patch, class: 'btn btn-flat-red' %>
+                <p><%= reservation.user.first_name%> <%= reservation.user.last_name%> wants to be a petmate from</p>
+                <p><%= reservation.start_date %> - <%= reservation.end_date%></p>
+                  <div class="d-flex button-div justify-content-end align-items-end card-product-buttons">
+                    <%= link_to 'Accept', accept_pet_reservation_path(reservation.pet.id,reservation.id), method: :patch, class: 'btn btn-flat-blue reservation-button' %>
+                    <%= link_to 'Decline', reject_pet_reservation_path(reservation.pet.id,reservation.id), method: :patch, class: 'btn btn-flat-red reservation-button' %>
                   </div>
               </div>
             </div>
@@ -114,22 +115,24 @@
         <% end %>
         </div>
     </div>
+
     <div class="col">
       <h3 style = "text-align:center">Resolved</h3>
       <div class = "cards-reservation">
         <% @user.received_reservations.each do |reservation| %>
           <%unless reservation.status == 'pending'%>
-            <div class = card >
-              <div class="card-image" style="background-image:url(<%= cl_image_path(reservation.pet.photos[0].key)%>)"></div>
-              <div class = "card-description">
+            <div class="card-product">
+            <%=cl_image_tag(reservation.pet.photos[0].key)%>
+            <div class="card-product-infos">
                 <h2><%= reservation.pet.name %></h2>
-                <p>Status <%=reservation.status %></p>
+                <p>Status: <%=reservation.status %></p>
               </div>
             </div>
           <% end %>
         <% end %>
       </div>
     </div>
+
   </div>
 </div>
 </section>

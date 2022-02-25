@@ -30,13 +30,14 @@
 }
 
 .btn-flat-red {
+  text-align: center;
   color: white;
-  padding: 8px 24px;
   border-radius: 10px;
   background: #f71414;
   transition: background 0.3s ease;
   text-decoration: none;
   opacity: .8;
+  width: 80px;
 }
 
 .btn-flat-red:hover {
@@ -46,13 +47,14 @@
 }
 
 .btn-flat-blue {
+  text-align: center;
   color: white;
-  padding: 8px 24px;
   border-radius: 10px;
   background: #00CFD1;
   transition: background 0.3s ease;
   text-decoration: none;
   opacity: .8;
+  width: 80px;
 }
 
 
