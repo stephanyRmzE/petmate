@@ -24,8 +24,14 @@ class ReservationPolicy < ApplicationPolicy
 
   def update?
     record.id == user.id
-    # - record: the restaurant passed to the `authorize` method in controller
-    # - user:   the `current_user` signed in with Devise.
+  end
+
+  def accept?
+    record.pet.user.id == user.id
+  end
+
+  def reject?
+    record.pet.user.id == user.id
   end
 
   def destroy?

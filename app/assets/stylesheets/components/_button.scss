@@ -20,11 +20,51 @@
   background: #f3724c;
   transition: background 0.3s ease;
   text-decoration: none;
+  opacity: .8;
 }
+
+
 
 .btn-flat-orange:hover {
   background: #f3724c;
   color: white;
+  opacity: 1;
+}
+
+.btn-flat-red {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 10px;
+  background: #f71414;
+  transition: background 0.3s ease;
+  text-decoration: none;
+  opacity: .8;
+}
+
+
+
+.btn-flat-red:hover {
+  background: #f71414;
+  color: white;
+  opacity: 1;
+}
+
+.btn-flat-blue {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 10px;
+  background: #00CFD1;
+  transition: background 0.3s ease;
+  text-decoration: none;
+  opacity: .8;
+}
+
+
+
+.btn-flat-blue:hover {
+  background: #00CFD1;
+  color: white;
+  opacity: 1;
 }
 
 .btn-pink {
