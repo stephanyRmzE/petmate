@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-11">
-    <h2 class="mt-5">Browse the <%= @pets.count %> available pets</h2>
+    <h2 class="mt-5">Browse with sweetness the <%= @pets.count %> available pets</h2>
       <div class = "cards">
         <% @pets.each do |pet| %>
           <a href="<%= pet_path(pet)%>">
