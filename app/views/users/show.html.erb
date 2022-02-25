@@ -24,7 +24,7 @@
     <div class="container">
       <div class="row justify-content-center">
         <div class="col">
-        <h2 style = "text-align:center">Your pets</h2>
+        <h2 style="text-align: center">Your pets</h2>
           <div class = "cards">
             <% @user.pets.each do |pet| %>
               <a href="<%= pet_path(pet)%>">
@@ -56,7 +56,7 @@
 <div class=container>
   <div class="row justify-content-center">
     <div class="col">
-      <h3 style = "text-align:center">Pending</h3>
+      <h3 class="reservation-titles">Pending</h3>
         <div class = "cards-reservation">
         <% @user.sent_reservations.each do |reservation| %>
           <%if reservation.status == 'pending'%>
@@ -72,7 +72,7 @@
         </div>
     </div>
     <div class="col">
-      <h3 style = "text-align:center">Pending</h3>
+      <h3 class="reservation-titles">Finalised</h3>
       <div class = "cards-reservation">
         <% @user.sent_reservations.each do |reservation| %>
           <%unless reservation.status == 'pending'%>
@@ -95,7 +95,7 @@
 <div class=container>
   <div class="row justify-content-center">
     <div class="col">
-      <h3 style = "text-align:center">Pending</h3>
+      <h3 class="reservation-titles">Pending</h3>
       <div class = "cards-reservation">
         <% @user.received_reservations.each do |reservation| %>
           <%if reservation.status == 'pending'%>
@@ -117,7 +117,7 @@
     </div>
 
     <div class="col">
-      <h3 style = "text-align:center">Resolved</h3>
+      <h3 class="reservation-titles">Resolved</h3>
       <div class = "cards-reservation">
         <% @user.received_reservations.each do |reservation| %>
           <%unless reservation.status == 'pending'%>
