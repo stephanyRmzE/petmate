@@ -16,16 +16,26 @@
   <div class="container">
     <div class="row justify-content-center">
       <div class="col">
-        <h4>🐾 Owner:</h4>
-        <p class="pet-details px-4"> <%= @pet.user.first_name %> <%= @pet.user.last_name %> </p>
-        <h4 class="mt-5">🐾 Breed:</h4>
-        <p class="pet-details px-4"> <%= @pet.breed %> </p>
-        <h4 class="mt-5">🐾 Species:</h4>
-        <p class="pet-details px-4"> <%= @pet.species %> </p>
-        <h4 class="mt-5">🐾 Age:</h4>
-        <p class="pet-details px-4"> <%= @pet.age %> years old. </p>
-        <h4 class="mt-5">🐾 Description:</h4>
-        <p class="pet-details px-4"> <%= @pet.description %></p>
+        <div class="col-cards">
+          <h4>🐾 Owner:</h4>
+          <p class="pet-details px-4"> <%= @pet.user.first_name %> <%= @pet.user.last_name %> </p>
+        </div>
+        <div class="col-cards">
+          <h4 class="mt-5">🐾 Breed:</h4>
+          <p class="pet-details px-4"> <%= @pet.breed %> </p>
+        </div>
+        <div class="col-cards">
+          <h4 class="mt-5">🐾 Species:</h4>
+          <p class="pet-details px-4"> <%= @pet.species %> </p>
+        </div>
+        <div class="col-cards">
+          <h4 class="mt-5">🐾 Age:</h4>
+          <p class="pet-details px-4"> <%= @pet.age %> years old. </p>
+        </div>
+        <div class="col-cards">
+          <h4 class="mt-5">🐾 Description:</h4>
+          <p class="pet-details px-4"> <%= @pet.description %></p>
+        </div>
         <div class="d-flex justify-content-center">
           <% if policy(@pet).edit? %>
             <h2 class="m-3"><%= link_to 'Edit', edit_pet_path(@pet), class: "btn btn-outline-warning" %></h2>
