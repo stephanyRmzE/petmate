@@ -15,11 +15,11 @@
   width: 150, height: 150, crop: :thumb, gravity: :face, zoom: 0.7, radius: :max %>
   <% end%>
   <h1><%= @user.first_name %>'s Profile Page</h1>
-  <%= link_to "Add a new pet", new_pet_path, class: "btn btn-outline-info" %>
-  <%= link_to "Update your profile", edit_user_path(@user), class: "btn btn-outline-warning" %>
-  <%= link_to "Delete your profile", user_path(@user), method: :delete, class: "btn btn-outline-danger", data: { confirm: "Are you sure you want to delete your account?" } %>
+  <%= link_to "Add a new pet", new_pet_path, class: "btn btn-info" %>
+  <%= link_to "Update your profile", edit_user_path(@user), class: "btn btn-warning" %>
+  <%= link_to "Delete your profile", user_path(@user), method: :delete, class: "btn btn-danger", data: { confirm: "Are you sure you want to delete your account?" } %>
 </div>
-<div class="container">
+<div class="container mt-5">
   <div class="row justify-content-center">
     <div class="container">
       <div class="row justify-content-center">
@@ -36,6 +36,8 @@
                   <% end %>
                   <div class = "card-description" >
                     <h2><%= pet.name %></h2>
+                    <p>Breed: <%= pet.breed %></p>
+                    <p>Age: <%= pet.age %></p>
                   </div>
                 </div>
               </a>
