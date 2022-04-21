@@ -1,10 +1,11 @@
 .banner {
   background-size: cover;
-  background-position: left;
+  background-position: 350% 50%;
   background-repeat: no-repeat;
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("https://images.unsplash.com/photo-1581171383994-afd540b6a4da?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1072&q=80");
-  height: calc(100vh - 78px - 80px);
-
+  height: 83vh;
+  width: 100vmax;
+  margin: 0;
   }
 
 .banner h1 {
@@ -23,7 +24,7 @@
 }
 
 .container-home-page {
-    max-width: 720px;
+    max-width: 90vw;
     padding-top: 250px;
-    padding-left: 35px;
+    padding-left: 1.1rem;
 }
