@@ -1,6 +1,6 @@
 # Petmate
 
-#### A website created using Rails and JavaScript made with the aim of sharing pets. Pet owners are able to upload oets to be borrowed, and pet borrowers can browse and rent their preferred pet.
+#### A website created using Rails and JavaScript made with the aim of sharing pets. Pet owners are able to upload pets to be borrowed, and pet borrowers can browse and rent their preferred pet.
 
 
 Visit the app at http://petmate-stephanyrmze.herokuapp.com/.
