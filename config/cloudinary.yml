@@ -1,18 +1,18 @@
 development:
   cloud_name: dby8sm7q4
-  api_key: '165219378498686'
+  api_key: "165219378498686"
   api_secret: FyhptduBUqBJaYvM5if95h1i6lM
   enhance_image_tag: true
   static_file_support: false
 production:
   cloud_name: dby8sm7q4
-  api_key: '165219378498686'
+  api_key: "165219378498686"
   api_secret: FyhptduBUqBJaYvM5if95h1i6lM
   enhance_image_tag: true
   static_file_support: true
 test:
   cloud_name: dby8sm7q4
-  api_key: '165219378498686'
+  api_key: "165219378498686"
   api_secret: FyhptduBUqBJaYvM5if95h1i6lM
   enhance_image_tag: true
   static_file_support: false

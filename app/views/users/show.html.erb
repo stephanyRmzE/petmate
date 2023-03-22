@@ -8,7 +8,7 @@
 <section class="tab-content">
   <div class="user-banner">
   <% if @user.photo.key.nil?%>
-  <%= cl_image_tag ("cat-icon_w4ssbq"),
+  <%= image_tag '/cat-icon.png',
   width: 150, height: 150, style: "border-radius: 50%" %>
   <% else%>
   <%= cl_image_tag @user.photo.key,
